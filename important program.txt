@@ -1,0 +1,513 @@
+//delete duplicate number from array
+
+let arr=[1,2,3,4,2,3],newArr=[],i,j
+let size=arr.length
+for( i=0;i<=size;i++)
+{
+    for( j=i+1;j<=size;j++)
+    {
+       if(arr[i]===arr[j]) 
+       {
+        for(let k=i;k<size;k++)
+        {
+        arr[k]=arr[k+1]
+        }
+        size--
+        i--
+       }
+       
+    }
+   
+}
+console.log(arr.filter((num)=>num!=undefined))
+
+--------------------------------------------------------------==============================================================
+let arr=[1,2,3],newArr=[]
+let n=arr.length
+let k=0
+for(let i=0;i<2*n;i++)
+{
+   
+    newArr[i]=arr[k]
+    k++
+     if(i==2)
+    {
+       k=0
+    }
+    
+}
+console.log(newArr)
+
+output=>[1,2,3,1,2,3]
+============================================================
+Question convert[1,2,3] to 123 then add 1 =124 then print 
+as array=[1,2,4]
+
+let arr=[1,2,3]
+let val=''
+for(let i=0;i<arr.length;i++)
+{
+    
+    val+=arr[i]
+}
+let n =val.length
+let num=Number(val)+1
+for(let i=n-1;i>=0;i--)
+{
+    let lastDigit=num%10
+    arr[i]=lastDigit
+    num=Math.floor(num/10)
+}
+
+console.log(arr)
+============================================================insert a value to arrary in a particular index
+function insert(arr,index)
+{
+  let n=arr.length
+  let temp=0
+  for(let i=0;i<=n;i++)
+  {
+    if(i==index)
+    {
+      for(let j=n;j>i;j--)
+      {
+        arr[j]=arr[j-1]
+      }
+      arr[i]=100
+    }
+  }
+  console.log(arr)
+}
+let arr=[1,2,3,4]
+insert(arr,2)
+========================================================
+compare two string str1=["abcd"]
+str2=["abcde"]
+const str = ["abcd"];
+ const string=str.toString()  
+console.log(string)
+
+for (let i = 0; i < string.length; i++) {
+  const char = string[i];
+  const asciiValue = string.charCodeAt(i);
+  console.log(`Character: ${char}, ASCII Value: ${asciiValue}`);
+}
+=======================================================
+Reverse an arrays
+let arr=[1,2,3,4,5]
+let n=arr.length/2
+for(let i=0;i<n;i++)
+{
+  let temp=arr[i]
+  arr[i]=arr[arr.length-i-1]
+  arr[arr.length-i-1]=temp
+}
+console.log(arr);
+=========================================================
+function primeNumber(n)
+{
+  if(n<2)
+  {
+    return false
+  }
+  for(let i=2;i<Math.sqrt(n);i++)
+  {
+    if(n%i===0 && n!=2)
+    {
+      return false
+    }
+  
+  }
+  return true
+}
+let result=primeNumber(51)
+console.log(result)
+if(result)
+console.log("Prime Number")
+else
+console.log("Not a Prime Number")
+============================================================
+//peak elements
+let arr=[1, 2, 1, 3, 5, 6, 4];
+let peakElement=[]
+for(let i=0;i<=arr.length;i++)
+{
+if(arr[i]>arr[i-1]&& arr[i]>arr[i+1])
+{
+ peakElement.push(arr[i])
+}
+}
+console.log(peakElement)
+============================================================
+//
+let words=['cool','lock','cook']
+let first= new Set(words[0])
+let arr=[]
+for(let i=1;i<words.length;i++)
+{
+    let second=new Set(words[i])
+    first.forEach((val)=>{
+       if( !second.has(val))
+        {
+            first.delete(val)
+        }
+      
+    });
+}
+console.log(first)
+============================================================
+if it is an integer push to array, if 'c' then remove the previous value from array,if '+' then add previous two numbers in array
+
+let ops=["5","2","C","D","+"]
+let arr=[]
+let sum=0
+for(let i=0;i<ops.length;i++)
+{
+    let val=ops[i]
+    switch(val)
+    {
+        case 'C':
+            arr.pop()
+            break;
+        case 'D':
+        arr.push(arr[arr.length-1]*2)
+        break;
+        case '+':
+            arr.push(arr[arr.length-1]+arr[arr.length-2])
+            break;
+        default:
+            arr.push(Number(val))
+            break;
+
+    }
+    
+}
+console.log(arr)
+for(let i=0;i<arr.length;i++)
+{
+    sum+=arr[i]
+}
+console.log(sum)
+============================================================
+Given an integer num, returns the number of digits in num that divides num
+An integer val divides nums if nums%val==0
+
+*********************************
+let num=7,count=0
+let value=num.toString()
+for(let i=0;i<value.length;i++)
+{
+    if(value%value[i]===0)
+    {
+        count++
+    }
+}
+console.log(count)
+**********************************
+
+given an array of positive integers sorted in a strictly increasing order and an integer k return the kth positive integer that is missing from this array
+
+let arr=[]
+for(let i=1;i<=1000;i++)
+{
+    arr[i]=i
+}
+let k=2
+let arr2=[1,2,3,4]
+let newArr=[]
+let result
+let size=arr2.length
+for(let i=0;i<arr2.length;i++)
+{
+    for(let j=0;j<arr.length;j++)
+    {
+        if(arr2[i]===arr[j])
+        {
+            for(let m=j;m<1000;m++)
+            {
+                arr[m]=arr[m+1]
+            }
+            break
+        }
+        
+    }
+}
+console.log(arr[k-1])
+============================================================
+Given two array of unique digits num1 and num2 returns the smallest number that contains at least one digit from each array
+
+let num1=[3,5,2,6],num2=[1,7]
+let smallest=""
+let common=[]
+for(let i=0;i<num1.length;i++)
+{
+    if(num2.includes(num1[i]))
+    {
+        common.push(num1[i])
+    }
+}
+console.log("Common=",common)
+let small=Number.MAX_VALUE
+for(i=0;i<=num1.length;i++)
+{
+    
+    if(num1[i]<small)
+    {
+        small=num1[i]
+    }
+}
+console.log(small)
+let first=small
+small=Number.MAX_VALUE
+for(i=0;i<=num2.length;i++)
+{
+    
+    if(num2[i]<small)
+    {
+        small=num2[i]
+    }
+}
+console.log(small)
+if(first<small)
+{
+smallest+=first
+smallest+=small
+}
+else
+{
+    smallest+=small
+    smallest+=first
+}
+let min=Number.MAX_VALUE
+if(common.length)
+{
+    for(i=0;i<common.length;i++)
+    {  
+        if(common[i]<min)
+        min=common[i]
+    }
+    console.log(min)
+}
+else{
+console.log(Number(smallest));
+}
+============================================================
+Given an array arr of integers,check if there exist two indices i and j such that:
+i!=j,0<=i ,j< arr.length,  arr[i]== 2*arr[j]
+***************************************************
+
+let arr=[3,1,7,11]
+function check(arr)
+{
+for(let i=0;i<arr.length;i++)
+{
+    for(let j=0;j<arr.length;j++)
+    {
+        if(i!=j)
+        {
+            if(arr[i]===2*arr[j])
+            return true
+        }
+    }
+}
+return false
+}
+console.log(check(arr))
+******************************************************
+======================================================
+To determine if string s is a subsequence of string t
+input s='abc' t='ahbgdc output=true
+but s="axc" t="ahbgdc" output =false
+=======================================================
+let s='abc'
+let t='ahgdc'
+let flag=true
+for(let x of s)
+{
+   flag=t.includes(x)
+   if(flag==false)
+   break
+}
+console.log(flag)
+*******************************************************
+list of numbers nums and a value k, and you want to determine if there are two distinct indices i and j in the list such that nums[i] == nums[j] and the absolute difference between i and j is at most k. If such indices exist, the output should be True; otherwise, it should be False.
+========================================================
+function analyse(arr,k)
+{
+
+for(let i=0 ;i<arr.length;i++)
+{
+  for(let j=i+1;j<arr.length;j++)
+  {
+    if(arr[i]===arr[j] )
+      {
+       if(Math.abs(j-i)<=k)
+       return true
+      }
+  }
+}
+ return false
+}
+let arr=[1,2,3,1], k=3
+console.log( analyse(arr,k))
+=========================================================
+let str="abbaca"
+let newStr=[]
+for(let j=0;j<str.length;j++)
+{
+for(let i=0;i<str.length;i++)
+{
+    if(str[i]===str[i+1])
+    {
+        str=str.slice(0,i)+str.slice(i+2)
+    }
+    
+
+}
+
+}
+console.log(str)
+*******************************************
+ string is immutable that's  why it didn't work
+ logic is correct but it didnt worked because it is a string
+let str="abbaca"
+let newstr=str.split('')
+let size=newstr.length
+for(let i=0;i<size;i++)
+{
+if(newstr[i]===newstr[i+1])
+{
+    for(let j=i;j<size;j++)
+    {
+        newstr[j]=newstr[j+2]
+    }
+    i-=2
+    size-=2
+    newstr.length = size; 
+}
+}
+console.log(newstr)
+=========================================================
+let word1="abc"
+let word2="pqr",i=0,newStr=""
+
+while(i<word1.length ||i<word2.length)
+{
+    if(i<word1.length)
+    {
+    newStr+=word1[i]
+    }
+    if(i<word2.length)
+    {
+    newStr+=word2[i]
+    }
+ i++
+}
+console.log(newStr)
+***********************************************************
+output=>apbqcr
+============================================================
+function div(num)
+{
+
+count=0
+do{
+if(num%2==0)
+{
+   num=num/2
+   
+count++
+}
+else{
+   num=num-1
+   
+count++
+}
+}while(num>0)
+return count
+}
+let num=123
+
+console.log(div(num))
+****************************
+output=12
+============================================================
+let arr1=[2,3,1,3,2,4,6,7,9,2,19]
+let arr2=[2,1,4,3,9,6]
+let newarr=[]
+
+const containing=arr1.filter(item=>arr2.includes(item))
+newarr.push(...containing)
+const remaining=arr1.filter(item=>!arr2.includes(item))
+newarr.push(...remaining)
+
+console.log(newarr)
+============================================================
+Example 1:
+
+Input: s = "leetcode"
+Output: 2
+Explanation: The substring "ee" is of length 2 with the character 'e' only.
+Example 2:
+
+Input: s = "abbcccddddeeeeedcba"
+Output: 5
+Explanation: The substring "eeeee" is of length 5 with the character 'e' only.
+***********************************************
+Answer:
+
+
+var maxPower = function(s) {
+    let count=1
+    let firstCount=0
+      
+    for(i=0;i<s.length;i++)
+    {
+        if(s[i]===s[i+1])
+        {
+            count++;
+        }
+        else
+        {
+            count=1;
+        }
+        if(count>firstCount)
+        {
+        firstCount=count;
+        }
+        
+       
+    }
+    return firstCount;
+}
+============================================================
+
+You are given an integer n and an integer start.
+
+Define an array nums where nums[i] = start + 2 * i (0-indexed) and n == nums.length.
+
+Return the bitwise XOR of all elements of nums.
+
+ 
+
+Example 1:
+
+Input: n = 5, start = 0
+Output: 8
+Explanation: Array nums is equal to [0, 2, 4, 6, 8] where (0 ^ 2 ^ 4 ^ 6 ^ 8) = 8.
+Where "^" corresponds to bitwise XOR operator.
+Example 2:
+
+Input: n = 4, start = 3
+Output: 8
+Explanation: Array nums is equal to [3, 5, 7, 9] where (3 ^ 5 ^ 7 ^ 9) = 8.
+var xorOperation = function(n, start) {
+    let value=0
+    for(i=0;i<n;i++)
+    {
+        value^=start+2*i
+       
+         
+    }
+    return value
+};
