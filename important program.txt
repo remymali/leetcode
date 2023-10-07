@@ -543,3 +543,26 @@ var canMakeArithmeticProgression = function(arr) {
  
 };
 ===============================================================
+Example 1:
+
+Input: date = "20th Oct 2052"
+Output: "2052-10-20"
+Example 2:
+
+Input: date = "6th Jun 1933"
+Output: "1933-06-06"
+Example 3:
+
+Input: date = "26th May 1960"
+Output: "1960-05-26"
+ Answer
+****************
+var reformatDate = function(date) {
+const months=["Jan","Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const item=date.split(' ')
+const day =item[0].match(/\d+/)
+const month=months.indexOf(item[1])+1
+const year=item[2]
+return(year+'-'+(month>9?month:'0'+month)+'-'+(day>9?day:'0'+day))
+};
+*****************
