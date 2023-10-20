@@ -566,6 +566,7 @@ const year=item[2]
 return(year+'-'+(month>9?month:'0'+month)+'-'+(day>9?day:'0'+day))
 };
 *****************
+<<<<<<< HEAD
 1688 question leetcode
 ----------------------
 Example 1:
@@ -604,3 +605,7 @@ var numberOfMatches = function(n) {
   return total;
 };
 *********************
+=======
+ 
+this is the change this is another change
+>>>>>>> fb34fff368504654a8afe870a4666931a596e602
