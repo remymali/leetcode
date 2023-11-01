@@ -605,7 +605,20 @@ var numberOfMatches = function(n) {
   return total;
 };
 *********************
-=======
- 
-this is the change this is another change
->>>>>>> fb34fff368504654a8afe870a4666931a596e602
+leetcode Qno.1816. Truncate Sentence
+// let s = "What is the solution to this problem", k = 4
+// var truncateSentence = function(s, k) {
+//     let arr=s.split(' ')
+//     let output=[]
+//     for(let i=0;i<k;i++)
+//     {
+       
+//       output.push(arr[i])
+//     }
+//      return output.join(' ')
+// };
+// console.log(truncateSentence(s,k))
+
+
+output:"What is the solution"
+***************************************
