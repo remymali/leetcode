@@ -622,3 +622,29 @@ leetcode Qno.1816. Truncate Sentence
 
 output:"What is the solution"
 ***************************************
+leetcode Qno.2016. Maximum Difference Between Increasing Elements
+
+var maximumDifference = function(nums) {
+    let maximumDiff=Number.MIN_VALUE
+    for(i=0;i<nums.length;i++)
+    {
+        for(j=i+1;j<nums.length;j++)
+        {
+            if(i!==j)
+            {
+              let diff=  nums[j]-nums[i]
+              if(diff>maximumDiff)
+              {
+                maximumDiff=diff
+              }
+            }
+        }
+    }
+    if(maximumDiff===Number.MIN_VALUE)
+    {
+        return -1
+    }
+
+    return maximumDiff
+};
+***************************************
