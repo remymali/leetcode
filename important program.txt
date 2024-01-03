@@ -688,3 +688,18 @@ Answer:var numIdenticalPairs = function(nums) {
     return count
 };
 ================================================================
+
+
+2562. Find the Array Concatenation Value
+Answer:var findTheArrayConcVal = function(nums) {
+    let sum = 0;
+
+    while(nums.length) {
+        const first = nums.shift();
+        const last = nums.pop();
+        const concat = first?.toString() + last?.toString();
+        sum += parseInt(concat);
+    }
+
+    return sum;
+};
