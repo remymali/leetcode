@@ -703,3 +703,29 @@ Answer:var findTheArrayConcVal = function(nums) {
 
     return sum;
 };
+================================================================
+2578. Split With Minimum Sum
+var splitNum = function(num) {
+    let newNum = num.toString().split('').map((str) => +str);
+    console.log(newNum.sort())
+    let first = 0;
+    let second = 0;
+    let sum = 0;
+
+    for(i=0;i<newNum.length;i++) {      
+        
+      
+        if(i%2===0 )
+       
+        first =first*10+newNum[i]
+
+       else {
+            second=second*10+newNum[i]
+        }
+        
+        
+    }
+    
+    sum = first + second;
+    return sum;
+};
