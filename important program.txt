@@ -774,3 +774,11 @@ var isFascinating = function(n) {
     return false
     
 };
+===========================================
+question:153. Find Minimum in Rotated Sorted Array
+---------------
+Answer:
+var findMin = function(nums) {
+    let arr =nums.sort((a,b)=>a-b)
+    return arr[0]
+};
