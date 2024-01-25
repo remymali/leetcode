@@ -782,3 +782,19 @@ var findMin = function(nums) {
     let arr =nums.sort((a,b)=>a-b)
     return arr[0]
 };
+
+===============================================
+question:1342. Number of Steps to Reduce a Number to Zero
+var numberOfSteps = function(num) {
+    let i=0
+    while(num!=0)
+    {
+    if(num%2==0)
+    num=num/2
+    else
+    num=num-1
+    i++
+    }
+    return i
+};
+=================================================
