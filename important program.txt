@@ -798,3 +798,32 @@ var numberOfSteps = function(num) {
     return i
 };
 =================================================
+
+question:2839. Check if Strings Can be Made Equal With Operations I
+answer: var canBeEqual = function(s1, s2) {
+    s1=s1.split('')
+    let j=0
+    if(s1===s2)
+    return true
+    else
+    {
+        for(let i=0;i<4;i++)
+        { 
+         if(i<2)   
+        j=i+2
+        else
+        j=i-2
+        let temp=s1[i]
+        s1[i]=s1[j]
+        s1[j]=temp
+        let newS1=s1.join('')
+        if(newS1===s2)
+      return true
+        }
+       
+        return false
+
+
+    }
+};
+
