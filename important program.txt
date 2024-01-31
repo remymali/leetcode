@@ -838,3 +838,16 @@ answer:var containsDuplicate = function(nums) {
     
 };
 ======================================================
+question: 2848. Points That Intersect With Cars
+answer:var numberOfPoints = function(nums) {
+   let point= new Set()
+   for(const[start,end] of nums)
+   {
+       for(i=start;i<=end;i++)
+       {
+           point.add(i)
+       }
+   }
+   return point.size
+};
+========================================================
