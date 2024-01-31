@@ -826,4 +826,15 @@ answer: var canBeEqual = function(s1, s2) {
 
     }
 };
-
+========================================================
+question:217. Contains Duplicate
+answer:var containsDuplicate = function(nums) {
+  let newArr=new Set(nums)
+  if(nums.length===newArr.size)
+  return false
+  else
+  return true
+  l
+    
+};
+======================================================
