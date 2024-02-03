@@ -851,3 +851,26 @@ answer:var numberOfPoints = function(nums) {
    return point.size
 };
 ========================================================
+question:2859. Sum of Values at Indices With K Set Bits
+answer:var sumIndicesWithKSetBits = function(nums, k) {
+    let sum=0
+    for(let i=0;i<nums.length;i++)
+    {
+        let binary=i.toString(2)
+       let arr= binary.split('')
+       let count=0
+       for(let j=0;j<arr.length;j++)
+       {
+           if(arr[j]==='1')
+           {
+               count+=1
+           }
+       }
+       if(count===k)
+       {
+       sum+=nums[i]
+       }
+    }
+    return sum
+};
+========================================================
