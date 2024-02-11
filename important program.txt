@@ -874,6 +874,7 @@ answer:var sumIndicesWithKSetBits = function(nums, k) {
     return sum
 };
 ========================================================
+Question: 2839. Check if Strings Can be Made Equal With Operations I
 var maximumTripletValue = function(nums) {
     let big=(nums[0]-nums[1])*nums[2]
     for(let i=0;i<nums.length;i++)
@@ -897,5 +898,23 @@ var maximumTripletValue = function(nums) {
     }             
     return big   
                 
+};
+===============================================================
+question:2894. Divisible and Non-divisible Sums Difference
+var differenceOfSums = function(n, m) {
+    let num1=0
+    let num2=0
+    for(i=0;i<=n;i++)
+    {
+        if(i%m!=0)
+        {
+          num1+=i
+        }
+        else
+        {
+            num2+=i
+        }
+    }
+    return num1- num2
 };
 ===============================================================
