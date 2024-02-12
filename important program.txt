@@ -918,3 +918,36 @@ var differenceOfSums = function(n, m) {
     return num1- num2
 };
 ===============================================================
+2908. Minimum Sum of Mountain Triplets I
+var minimumSum = function(nums) {
+    const triplet=[]
+    for(let i=0;i<nums.length-2;i++)
+    {
+        for(let j=i+1;j<nums.length-1;j++)
+        {
+            for(let k=j+1;k<nums.length;k++)
+            {
+                if(i<j<k && nums[i] < nums[j] && nums[k] < nums[j])
+                {
+                    triplet.push(nums[i]+nums[j]+nums[k])
+                }
+            }
+        }
+    }
+
+    if(triplet.length<=0)
+    return -1
+    else 
+    {
+        let lowestsum=triplet[0]
+        for(const tri of triplet)
+        {
+            if(lowestsum>tri)
+            {
+                lowestsum=tri
+            }
+        }
+        return lowestsum
+    }
+};
+=======================================================
