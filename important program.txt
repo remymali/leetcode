@@ -974,3 +974,29 @@ Answer : var lengthOfLastWord = function(s) {
     
 };
 ============================================================
+
+question:13. Roman to Integer
+Answer:var romanToInt = function(s) {
+    let sum=0
+   const example={
+        'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000
+   }
+    for(let i=0;i<s.length;i++)
+    {
+        console.log(s[i])
+      const curr=example[s[i]]
+      const next=example[s[i+1]]
+
+      if(curr<next)
+      {
+      sum+=next-curr
+      i++
+      }else
+        {
+            sum+=curr
+        }
+        
+    }
+    return sum
+};
+=================================================================
