@@ -1038,3 +1038,40 @@ answer:var removeElement = function(nums, val) {
     return j
 };
 =========================================================================
+
+question:3024. Type of Triangle
+Answer:var triangleType = function(nums) {
+    nums.sort((a,b)=>a-b)
+    let count =0,j=1;
+    for(let i=0;i<=3;i++)
+    {
+
+       if(nums[i]===nums[j])
+       {
+       count++
+       console.log("i",i)
+       }
+       j++
+    
+    }
+    
+    if(count===3)
+    return "equilateral"
+    else if (count===2)
+    {
+         if(nums[0]+nums[1]>nums[2])
+         return "isosceles"
+         else
+         return "none"
+    }
+       
+    else
+    {
+        if(nums[0]+nums[1]>nums[2])
+         return "scalene"
+         else
+         return "none"
+    } 
+   
+};
+===============================================================
