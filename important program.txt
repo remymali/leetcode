@@ -1074,4 +1074,36 @@ Answer:var triangleType = function(nums) {
     } 
    
 };
-===============================================================
+==============================================================
+shefeen interview question
+
+let str="Hello this is an apple"
+console.log(str.toLowerCase())
+let temp=str.split(' ')
+let lastStr=[]
+for(i=0;i<temp.length;i++)
+{
+   let old=temp[i].length
+   let newstr= new Set(temp[i])
+   console.log(newstr)
+  if(old!==newstr.size)
+  
+  lastStr.push(temp[i])
+  console.log(lastStr) 
+  break;
+}
+let s="@#@$%",output=""
+for(i=0;i<lastStr[0].length;i++)
+{let temp=lastStr[0]
+    output+=temp[i]
+    output+=s[i]
+}
+console.log(output)
+
+answer
+--------
+hello this is an apple
+Set(4) { 'H', 'e', 'l', 'o' }
+[ 'Hello' ]
+H@e#l@l$o%
+============================================================
